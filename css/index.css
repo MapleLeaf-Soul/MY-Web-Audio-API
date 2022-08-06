@@ -1,0 +1,138 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: arial, "Microsoft YaHei";
+	font-size: 16px;
+	background-color: #000000;
+	color: #FEFEFE;
+}
+
+div.full {
+	position: fixed;
+	box-sizing: border-box;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	left:0px;
+	z-index:0;
+}
+
+div.switch{
+	-webkit-user-select:none;
+	position:absolute;
+	z-index:999;
+	top: 55px;
+	display = none;
+	height:500px;
+	width:236px;
+	padding: 15px;
+	background-color: #EEEEEE;
+	color: #000000;
+	border-radius: 10px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	direction:rtl;
+}
+div.right{
+	direction:ltr;
+}
+div.switch::-webkit-scrollbar{
+    width: 8px;
+    height: 4px;
+}
+/*滚动条滑块*/
+div.switch::-webkit-scrollbar-thumb{
+    border-radius: 3px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #c7c4c4;
+}
+/*滚动条里面轨道*/
+div.switch ::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2) inset;
+ 
+}
+/*滚动条的小边角*/
+div.switch::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+canvas{
+	position:absolute;
+	z-index:0;
+}
+
+div.picdiv{
+	height:60px;
+	width:60px;
+	border-radius: 5px;
+	padding: 5px;
+	display:inline-block;
+	background-color: #ffffff;
+	margin: 1px;;
+}
+div.picdiv:active{
+	background-color: #e5e5e5;
+}
+
+img{
+	display = inline-block;
+	background-color: transparent;
+	height:60px;
+	width:60px;
+
+}
+
+img.menu{
+	width: 40px;
+	height: 40px;
+}
+div.minimenu{
+	-webkit-user-select:none;
+	z-index:99;
+	position:absolute;
+	height:40px;
+	width:40px;
+	padding:5px;
+	color: #000000;
+	background-color: #FEFEFE;
+	display:inline-block;
+	text-align:center;
+	border-radius: 10px;
+	opacity:1;
+	left:0;
+	transform:rotate(0deg);
+}
+
+div.minimenu:active{
+	padding:0;
+	background-color: #EEEEEE;
+	border:5px inset #FEFEFE;
+	
+}
+
+div.clickhere{
+	-webkit-user-select:none;
+	position:absolute;
+	top:15px;
+	left: 60px;
+	font-size: 20px;
+	display:inline-block;
+	opacity:1;
+	font-weight:bold;
+	z-index:1;
+}
+
+div.tips{
+	-webkit-user-select:none;
+	font-size: 10px;
+	color: #999999;
+}
+input.file{
+	border-radius: 10px;
+	border:0.5px solid #888888 ;
+}
+input.file:active{
+	background-color: #E5E5E5;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>音频可视化播放器</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>	
+	</head>
+	<body>
+		<div class="minimenu" id="minimenu" style="top: 5px;">
+			<img src="pic/menu.png" class="menu"/>
+		</div>
+		<div class="clickhere" id="clickhere">←点击此处展开选项</div>
+		<div class="switch" id="switch"><!-- 控制 -->
+		<div class="right">
+			<div id="fileIn">
+			</div>
+			<input type="button" id="fileMusicbutton" value="导入" class="file">请选择音频文件
+			<input type="file" id="fileMusic" style="display:none;"/>
+			<br/>
+			<br/>
+			<div>
+				音量：<input id="volume" type="range" min="0" max="100" value="50">
+				<span id="volumeshow">0</span>
+			</div>
+			<div>
+				物量：<input id="size" type="range" min="50" max="300" value="300">
+				<span id="sizeshow">0</span>
+			</div>
+			<div class="tips">*增大时可能出现异常，刷新界面即可重置</div>
+			<br/>
+			<div>
+				<input type="checkbox" id="canvasbottomalpha" checked="checked">底部频谱：
+				<div id="bottomswitch">
+					<div>样式：
+					<br/>
+						<div class="picdiv" id="bottomcolor1div"> <img src="pic/bottomcolor1.png" /></div>
+						<div class="picdiv" id="bottomcolor2div"> <img src="pic/bottomcolor2.png" /></div>
+						<div class="picdiv" id="bottomcolor3div"> <img src="pic/bottomcolor3.png" /></div>
+					</div>
+					<div>
+						自定义颜色：
+						<br/>
+						<canvas id="bottomcolor4div" style="width: 228px;height: 10px;"></canvas>
+						<br/>
+						<div  style="display:flex; justify-content:space-between;">
+							<input type="color" id="bottomcolor4left"/>
+							<input type="color" id="bottomcolor4right"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div>
+				<input type="checkbox" id="canvassnowalpha" checked="checked">背景飘落：
+				<div id="snowswitch">
+					<div>
+						<input type="checkbox" id="snowalpha" checked="checked">随机透明
+					</div>
+					<div>
+						下落速度：
+						<div>
+							竖向：<input id="snowxdownspeed" type="range" min="0" max="100" value="30">
+							<span id="snowxdownspeedshow">0</span>
+						</div>
+						<div>
+							横向：<input id="snowydownspeed" type="range" min="0" max="100" value="20">
+							<span id="snowydownspeedshow">0</span>
+						</div>
+						<div>
+							<input type="checkbox" id="snowtail">拖尾效果
+						</div>
+						<div class="tips">*实验效果，出现异常请刷新界面</div>
+					</div>
+					<div>样式：
+					<br/>
+					<div class="picdiv" id="snow1div"> <img id="snow1pic" src="pic/snow.png" /></div>
+					<div class="picdiv" id="snow2div"> <img id="snow2pic" src="pic/star.png" /></div>
+					<div class="picdiv" id="snow3div"> <img id="snow3pic" src="pic/upload.png" /></div>
+					<input type="file" id="snow3picupload" style="display:none;"/>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div>
+				<input type="checkbox" id="canvascirclealpha" checked="checked">中心音量：
+				<div id="circleswitch">
+					<div>
+						体积：<input id="circle" type="range" min="-200" max="200" value="0">
+						<span id="circleshow">0</span>
+					</div>
+					<div>样式：
+					<br/>
+					<div class="picdiv" id="circle1div"> <img id="circle1pic" src="pic/snowman.png" /></div>
+					<div class="picdiv" id="circle2div"> <img id="circle2pic" src="pic/starnight.png" /></div>
+					<div class="picdiv" id="circle3div"> <img id="circle3pic" src="pic/upload.png" /></div>
+					<input type="file" id="circle3picupload" style="display:none;"/>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div>
+				<input type="checkbox" id="canvaspoweralpha" checked="checked">环绕频谱：
+				<div id="powerswitch">
+					<div>
+						<input type="checkbox" id="poweralpha" checked>随机透明
+					</div>
+					<div>
+						<input type="checkbox" id="powersymmetry" checked>对称
+					</div>
+					<div>
+						宽度：<input id="powerWidth" type="range" min="1" max="100" value="50">
+						<span id="powerWidthshow">0</span>
+					</div>
+					<div>样式：
+					<br/>
+					<div class="picdiv" id="powercolor1div"> <img src="pic/powercolor1.png" /></div>
+					<div class="picdiv" id="powercolor2div"> <img src="pic/powercolor2.png" /></div>
+					<div class="picdiv" id="powercolor3div"> <img src="pic/powercolor3.png" /></div>
+					</div>
+					<div>
+						<input type="color" id="powercolor4div"/>自定义颜色
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div>背景样式：
+			<div>
+				<input type="color" id="backgroundcolor" value="#110011"/>背景颜色
+			</div>
+			</div>
+
+		</div>
+		</div>
+		<div class="full" id="box"><!-- 总页 -->
+			<!-- 画面 -->
+		</div>
+		<script src="js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/read.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/draw.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/switch.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="js/menu.js" type="text/javascript" charset="UTF-8"></script>	
+	</body>
+</html>
